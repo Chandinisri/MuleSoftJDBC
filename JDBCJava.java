@@ -64,7 +64,3 @@ System.out.println("The Table Contents:\n");
 
 }
 
-/*use actor or actress name to retrieve table
-also print whole table using select stmt*/
-
-
