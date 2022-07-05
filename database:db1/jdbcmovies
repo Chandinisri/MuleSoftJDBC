@@ -1,0 +1,59 @@
+REPORT : 
+->Downloaded softwares(Eclipse, Database connector, MySQL WorkBench)
+->Created a project in Eclipse to establish a connection using JDBC Connector
+->Created a database and then a table called 'jdbcmovies' in MySQL WorkBench, with table contents as SNo., MoviName, Actor, Actress, Director, Year Of Release
+->Then in the project that was created earlier in Eclipse, we have to write a code to execute/ Update/ Delete table contents
+->In the JDBC code we have look after seven steps which are:Importing JDBC packages,
+                                                             Load and register the JDBC driver,
+                                                             Open a connection to the database,
+                                                             Create a statement object to perform a query,
+                                                             Execute the statement object and return a query resultset,
+                                                             Process the resultset,
+                                                             Close the resultset and statement objects,
+                                                             Close the connection,
+
+
+
+
+1st output : after creating a database and a table called 'jdbcmovies';
+ select * from jdbcmovies;
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+| Sno. | MoviName            | Actor             | Actress           | Director            | YearOfRelease |
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+|    1 | Bahubali            | Prabhas           | Anushka           | Rajamouli           | 2015          |
+|    2 | Pushpa              | Allu Arjun        | Rashmika Mandanna | Sukumar             | 2022          |
+|    3 | Arjun Reddy         | Vijay Devarakonda | Shalini Pandey    | Sandeep Reddy Vanga | 2017          |
+|    4 | SVP                 | Mahesh Babu       | Keerthi Suresh    | Parasuram           | 2022          |
+|    5 | Bheemla Nayak       | Pawan Kalyan      | Nithya Menon      | Saagar K Chandra    | 2022          |
+|    6 | Atharintiki Dharedi | Pawan Kalyan      | Samantha          | Trivikram Srinivas  | 2013          |
+|    7 | Cruella             | Emma Stone        | Emma Thompson     | Craig Gillespie     | 2021          |
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+7 rows in set (0.08 sec)
+
+
+2nd output : after inserting another row
+insert into jdbcmovies values(8,'Badri','Pawan Kalyan','Renu Desai'+ 'Puri Jagannadh',2000);
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+| Sno. | MoviName            | Actor             | Actress           | Director            | YearOfRelease |
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+|    1 | Bahubali            | Prabhas           | Anushka           | Rajamouli           | 2015          |
+|    2 | Pushpa              | Allu Arjun        | Rashmika Mandanna | Sukumar             | 2022          |
+|    3 | Arjun Reddy         | Vijay Devarakonda | Shalini Pandey    | Sandeep Reddy Vanga | 2017          |
+|    4 | SVP                 | Mahesh Babu       | Keerthi Suresh    | Parasuram           | 2022          |
+|    5 | Bheemla Nayak       | Pawan Kalyan      | Nithya Menon      | Saagar K Chandra    | 2022          |
+|    6 | Atharintiki Dharedi | Pawan Kalyan      | Samantha          | Trivikram Srinivas  | 2013          |
+|    7 | Cruella             | Emma Stone        | Emma Thompson     | Craig Gillespie     | 2021          |
+|    8 | Badri               | Pawan Kalyan      | Renu Desai        | Puri Jagannadh      | 2000          |
++------+---------------------+-------------------+-------------------+---------------------+---------------+
+8 rows in set (0.08 sec)
+
+3rd output : to print an actor's particular movies
+select MoviName from jdbcmovies where Actor ='Pawan Kalyan';
++---------------------+
+| MoviName            |
++---------------------+
+| Bheemla Nayak       |
+| Atharintiki Dharedi |
+| Badri               |
++---------------------+
+3 rows in set (0.00 sec)
